@@ -1,0 +1,60 @@
+bibigay ng svg na male and female magkasama
+
+AI file 1
+- 1 position - M/F - STANDING
+
+AI file 2
+- 1 position - M/F - Sitting
+
+-- gagawa ka ng separate AI -- magkasama ung pos1 and pos2
+-- merging..
+
+-- save as svg
+
+================================================================
+
+
+svg all pos base - sitting, etc.
+
+================================================================
+
+convert xml to json
+
+-- scrape id -- add with class
+
+#id - standard IDs -- pwede targettin -- STANDARDIZE IDs
+
+ID -- add with corresponding standaardized class - KEV
+
+======================
+automation
+- look for all <g> tag add id with class
+= go inside <g> -- look for elements == (regardless if path, rect, circle,line) -
+== check the following elems:
+- tint, base, shade (regex id)
+=== check if add ID with data attrb. == diff pag base, tint , shade
+=== check if fill . if fill != none - add data-fill depends on its id
+=== check if stroke . if stroke != none = add data-fill
+
+
+hair:
+mhr1 - avatar-hair-top (class)
+
+head
+mhd1 - avatar-head
+
+eyebrows - avatar-eyebrows
+
+eyes - avatar-eyes
+
+mouth - avatar-mouth
+
+clothesTop - avatar-clothes-top
+
+clothesLower - avatar-clothes-lower
+
+shoes - avatar-shoes
+
+Notes:
+Fill="none" - mouth,eyebrows,male-shoes,shirt-male,
+			  jazz-bazz

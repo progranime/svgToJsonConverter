@@ -1,0 +1,19 @@
+{
+	"position" : [
+		{
+			"name"     : "Guitar",
+			"fileName" : "avatarMaleGuitar.svg",
+			"position"  : "guitar"
+		},
+		{
+			"name"     : "Sitting",
+			"fileName" : "avatarMaleSitting.svg",
+			"position" : "sitting"
+		},
+		{
+			"name"     : "Standing",
+			"fileName" : "avatarMaleStanding.svg",
+			"position" : "standing"
+		}
+	]
+}

@@ -1,0 +1,9 @@
+{
+	"position" : [
+		{
+			"name"     : "Standing",
+			"fileName" : "avatarFemaleStanding.svg",
+			"position" : "standing"
+		}
+	]
+}
