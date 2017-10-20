@@ -51,7 +51,7 @@ var AVATAR = AVATAR || {};
                     "class": "avatar-eyebrows",
                     "bodyPart": "eyebrows"
                 },
-                "o": {
+                "ey": {
                     "class": "avatar-eyes",
                     "bodyPart": "eyes"
                 },
@@ -123,11 +123,36 @@ var AVATAR = AVATAR || {};
             
             $.each(elemArr, function(index,val) {
 
-                id = $(this).attr('id').split('_');
+                // console.log("ID: " + $(this).attr('id'));
 
-                for(var x=0; x < id.length; x++) {
-                    self.convertIdToDataAttr($(this), id[x]);
+                id = $(this).attr('id');
+
+                if(id != undefined) {
+                    id = id.split('_');
+
+                    console.log("Id Length: " + id.length);
+
+                    for(var x=0; x < id.length; x++) {
+                        self.convertIdToDataAttr($(this), id[x]);
+                    }
+                } else{
+                    console.log("Id is undefined");
+                    // if(id == "undefined") {
+                        // console.log("Id is undefined");
+                        // console.log("Fill: " + $(this).attr('fill'));
+                        if($(this).attr('fill') != "none") {
+                            $(this).attr('data-fill', $(this).attr('fill'));
+                            // console.log("fill is undefined");
+                        }
+
+                        if($(this).attr('stroke') != "none") {
+                            $(this).attr('data-stroke', $(this).attr('stroke'));
+                        }
+
+                    // }
                 }
+
+                
 
             });
 
@@ -141,12 +166,14 @@ var AVATAR = AVATAR || {};
             var convert;
             var style = id.match("fill") ? "fill" : "stroke";
 
+            console.log("Style: " + style);
+
             //replace with hypen the camelCase and lowercase it
             convert = (id.replace(/([a-z](?=[A-Z]))/g, '$1-')).toLowerCase();
             convert = convert.replace('color-','color_');
             convert = convert.replace(style + "-", "");
             elem.attr('data-' + style, convert);
-            elem.removeAttr('id');
+            // elem.removeAttr('id');
         },
 
         convertToJson: function() {
